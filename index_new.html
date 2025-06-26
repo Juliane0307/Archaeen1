@@ -1,24 +1,82 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="de">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta charset="UTF-8">
   <title>Kapitel 1</title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2202.7">
-  <style type="text/css">
-    body {background-color: #e7e7e7}
-    p.p2 {margin: 0.0px 0.0px 12.0px 0.0px; text-align: center; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 18.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
-    span.s1 {font-kerning: none}
-    span.s2 {font: 18.0px '.Apple Color Emoji UI'; font-kerning: none; background-color: #0c44ff}
-    span.s3 {font-kerning: none; background-color: #0c44ff}
-    span.s4 {font: 12.0px Helvetica; font-kerning: none; color: #000000; -webkit-text-stroke: 0px #000000}
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #f0f0f0;
+      padding: 40px;
+    }
+    #start-button {
+      font-size: 18px;
+      padding: 14px 28px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #start-button:hover {
+      background-color: #0056b3;
+    }
+    video {
+      width: 80%;
+      max-width: 720px;
+      display: none;
+      margin: 40px auto;      /* Zentriert horizontal */
+      display: block;
+    }
+    #weiter-button {
+      display: none;
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #weiter-button:hover {
+      background-color: #218838;
+    }
   </style>
 </head>
 <body>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; text-align: center; font: 18.0px Helvetica; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Kapitel 1</b></span></h2>
-<p class="p2"><span class="s1">Klicken auf „Start“, um die Animation zu starten.</span></p>
-<p class="p3"><span class="s2">▶️</span><span class="s3"> Start</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
+
+  <h2>Kapitel 1</h2>
+
+
+  <button id="start-button">▶️ Start</button>
+
+  <video id="video1">
+    <source src="https://tuc.cloud/index.php/s/ARHGLo7HAMdke5K/download" type="video/mp4">
+    Dein Browser unterstützt dieses Video nicht.
+  </video>
+
+  <br>
+
+  <button id="weiter-button" onclick="location.href='kapitel2.html'">Weiter</button>
+
+  <script>
+    const startBtn = document.getElementById('start-button');
+    const video = document.getElementById('video1');
+    const weiterBtn = document.getElementById('weiter-button');
+
+    startBtn.addEventListener('click', () => {
+      startBtn.style.display = 'none';
+      video.style.display = 'block';
+      video.play();
+    });
+
+    video.addEventListener('ended', () => {
+      weiterBtn.style.display = 'inline-block';
+    });
+  </script>
+
 </body>
 </html>
+
